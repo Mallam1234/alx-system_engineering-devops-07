@@ -1,10 +1,8 @@
-# ssh_config
-
+# ssh client configuration with no password authentication
 Host *
-    PasswordAuthentication no
-    IdentityFile ~/.ssh/school
     SendEnv LANG LC_*
     HashKnownHosts yes
     GSSAPIAuthentication yes
-    HostName 100.26.10.86
-    User ubuntu
+    GSSAPIDelegateCredentials no
+    IdentityFile ~/.ssh/id_rsa
+    PasswordAuthentication no
