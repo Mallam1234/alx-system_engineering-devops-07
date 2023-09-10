@@ -1,0 +1,39 @@
+The "g" key is pressed
+The following sections explain the physical keyboard actions and the OS interrupts. When you press the key "g" the browser receives the event and the auto-complete functions kick in. Depending on your browser's algorithm and if you are in private/incognito mode or not various suggestions will be presented to you in the dropdown below the URL bar. Most of these algorithms sort and prioritize results based on search history, bookmarks, cookies, and popular searches from the internet as a whole. As you are typing "google.com" many blocks of code run and the suggestions will be refined with each keypress. It may even suggest "google.com" before you finish typing it.
+
+
+
+When "G" key is pressed on a computer keyboard, several processes take place to register and respond to the keypress. This what happens when you press the "G" key:
+
+Key Press Event:
+The keypress is detected by the keyboard hardware.
+
+Keyboard Driver:
+The keyboard driver is a software component of the operating system that intercepts the keypress event.
+
+Keycode Generation:
+The keyboard driver maps the physical key to a unique keycode, it a numerical representation of the key. In this case, the "G" key will associate with specific keycode.
+
+Event Generation
+Keyboard driver generates a keyboard input event containing the keycode for the "G" keypress.
+
+Event Queuing:
+The keyboard input event is added to a queue of pending input events.
+
+Input Event Processing
+Operating system's event-handling system processes the queued keyboard input event.
+
+Application Focus:
+it an application or window currently in focus (i.e., the one you're actively using), the input event is sent to that application. If no application is in focus, the event may be sent to the system or desktop environment.
+
+Application Response:
+The application that receives the "G" keypress event responds accordingly. Depending on the context and functionality of the application, this could trigger various actions. For example:
+In a text editor or word processor, the "G" character is inserted into the document.
+In a web browser, if a webpage is open, it might scroll down if there's a feature associated with the "G" key.
+
+Accessibility and Keybindings:
+Operating systems often provide accessibility features and customizable keybindings. Users with specific needs which configure how the "G" key (or any other key) behaves.
+
+Event Propagation:
+If the event is not consumed by the focused application, the operating system may propagate it to other system-level processes or capture it for system-wide shortcuts.
+pressing the "G" key initiates a series of events involving hardware, keyboard drivers, event processing, and application responses.
