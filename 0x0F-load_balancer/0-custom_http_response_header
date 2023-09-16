@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Install Nginx
+sudo apt update
+sudo apt install nginx -y
+
+# Define the custom HTTP header name and value
+custom_header_name="X-Served-By"
+custom_header_value=$(hostname)
+
+# Create an Nginx configuration file for the custom header
+echo "server {
+    listen 80;
+    server_name _;
+
+    location / {
+        add_header $custom_header_name $custom_header_value;
+        # Your existing Nginx configuration directives go here
+    }
+}" | sudo tee /etc/nginx/sites-available/custom_header
+
