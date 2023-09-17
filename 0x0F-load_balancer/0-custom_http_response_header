@@ -18,3 +18,19 @@ server {
         # Your existing Nginx configuration directives go here
     }
 }
+EOF
+
+# Create a symbolic link to enable the new configuration
+sudo ln -s /etc/nginx/sites-available/custom_header /etc/nginx/sites-enabled/
+
+# Remove the default Nginx configuration
+sudo rm /etc/nginx/sites-enabled/default
+
+# Test the Nginx configuration for syntax errors
+sudo nginx -t
+
+# Reload Nginx to apply the changes
+sudo systemctl reload nginx
+
+# Ignore SC2154 for shellcheck
+# shellcheck disable=SC2154
