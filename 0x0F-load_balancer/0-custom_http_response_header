@@ -1,11 +1,20 @@
 #!/usr/bin/env bash
-# update the system and install nginx; add a custom header to server configuration.
-# Put some strings into the landing page and the 404 error page and start nignx
-apt-get -y update
-apt-get -y install nginx
 
-sed -i "47i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
-echo "Hello World!" | tee /var/www/html/index.html
-Ceci n'est pas une page" > /var/www/html/404.html
+# Update the package list and install Nginx
+sudo apt update
+sudo apt install nginx -y
 
-echo "service nginx start
+# Get the current hostname
+server_hostname=$(hostname)
+
+# Create a custom Nginx configuration file for the custom header
+cat <<EOF | sudo tee /etc/nginx/sites-available/custom_header
+server {
+    listen 80 default_server;
+    server_name _;
+
+    location / {
+        add_header X-Served-By $server_hostname;
+        # Your existing Nginx configuration directives go here
+    }
+}
